@@ -1,0 +1,48 @@
+Yuzhe Lu
+WEBAPI HW1
+
+Alt-Svc →hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337; quic=51303335,quic=":443"; ma=2592000; v="41,39,38,37,35"
+--Alternative Services header to  indicate resources can also be accessed at a different
+	network location or using different protocol
+	hq = protocol
+	ma = max age in seconds
+	
+
+Cache-Control →private, max-age=0, must-revalidate, no-transform
+-- Tells caching mechanisms from server to client wheather they may cache this object.
+--in this case, no caching. must revalidate
+
+Content-Encoding →gzip
+--the type of encoding used on data. gzip encoding
+
+Content-Type →application/json; charset=UTF-8
+--Shows media type of the body of request. This is an application using json and UTF-8 encoding
+
+Date →Sat, 03 Feb 2018 20:10:48 GMT
+--Date and time the message was originated
+
+ETag →"f6QLsd8inUgRKJVNBqJ8xHnPb0w/bWPuPXFBm7sQGm8pn5Q77xhganY"
+--identifier for a specific version of a resource.
+
+Expires →Sat, 03 Feb 2018 20:10:48 GMT
+--date/time which response goes stale
+
+Server →GSE
+--name for a server. this is a Google server
+
+Transfer-Encoding →chunked
+form of encoding used to safely transfer the entity to user. 
+
+Vary →Origin
+Vary →X-Origin
+--tells downstream proxies how to match future request headers. decides if cached response can be used. 
+-- origin - fresh from origin server
+
+X-Content-Type-Options →nosniff
+--only one defined value. prevents from MIME-sniffing a response away from the declared content type.
+
+X-Frame-Options →SAMEORIGIN
+--clickjacking protection. SAMEORIGIN - no rendering if origin mismatch
+
+X-XSS-Protection →1; mode=block
+--cross site sripting filter
